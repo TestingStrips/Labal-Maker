@@ -905,7 +905,7 @@
         <select id="f_pay"><option>Cash App</option><option>Venmo</option><option>Zelle</option><option>PayPal</option><option>Direct deposit</option><option>Mailed check</option></select>
       </div>
       <label class="consent"><input type="checkbox" id="f_consent"> I agree to the terms and privacy policy, and confirm these supplies were purchased out of pocket (not Medicare/Medicaid).</label>
-      <label class="consent"><input type="checkbox" id="f_sms"> I agree to receive text messages about my order. Reply STOP to opt out; message rates may apply.</label>
+      <label class="consent"><input type="checkbox" id="f_sms" name="sms_consent"> I agree to receive text messages from SellTestingStrips.com about my quote, shipping labels, payment, and future offers. Message frequency varies. Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help. Consent is not a condition of selling.</label>
       <div class="form-error" id="formError">Please complete the required fields and agreements.</div>
       <button class="btn btn-primary" id="submitBtn" onclick="submitLead()">Send my free kit</button>
     </div>
@@ -1093,7 +1093,8 @@
       packaging:parcel,
       shipping:val('f_ship'),
       payment:val('f_pay'),
-      consent:{terms:document.getElementById('f_consent').checked,sms:document.getElementById('f_sms').checked}
+      consent:{terms:document.getElementById('f_consent').checked,sms:document.getElementById('f_sms').checked},
+      sms_consent:document.getElementById('f_sms').checked
     };
 
     const btn=document.getElementById('submitBtn');
